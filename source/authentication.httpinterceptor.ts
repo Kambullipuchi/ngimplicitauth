@@ -1,7 +1,7 @@
-import {AuthenticationService} from './authentication.service.ts';
+import {AuthenticationService} from "./authentication.service.ts";
 
 export class AuthenticationHttpInterceptor implements ng.IHttpInterceptor {
-    static NAME: string = 'AuthenticationHttpInterceptor';
+    static NAME: string = "AuthenticationHttpInterceptor";
 
     /* @ngInject */
     public static factory (
@@ -9,7 +9,7 @@ export class AuthenticationHttpInterceptor implements ng.IHttpInterceptor {
             AUTHENTICATED_URLS: RegExp,
             AUTHENTICATED_URLS_EXCEPTIONS: RegExp,
             AuthenticationService: AuthenticationService
-        ) : AuthenticationHttpInterceptor {
+        ): AuthenticationHttpInterceptor {
 
             return new AuthenticationHttpInterceptor (
                     $rootScope,
@@ -24,7 +24,7 @@ export class AuthenticationHttpInterceptor implements ng.IHttpInterceptor {
             private $rootScope: ng.IRootScopeService,
             private AUTHENTICATED_URLS: RegExp,
             private AUTHENTICATED_URLS_EXCEPTIONS: RegExp,
-            private AuthenticationService: AuthenticationService           
+            private AuthenticationService: AuthenticationService
         ) {
 
     }

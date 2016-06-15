@@ -21,9 +21,9 @@ export class ParameterController {
 			key: "expires_in" 
 		}).value, "seconds");
 
-		let statePresent = _.findLastIndex(keyValueList, o => o.key == 'state');
+		let statePresent = _.findLastIndex(keyValueList, o => o.key === 'state');
 
-		if (statePresent !== -1) {
+		if (statePresent !=== -1) {
 			let redirectUrl = _.find(keyValueList, { key: "state" }).value.replace(/;/g, '&');
 			if (this.shouldRedirectWindowLocation($window.location.href, redirectUrl)) {
 				this.$window.location.href = redirectUrl;
